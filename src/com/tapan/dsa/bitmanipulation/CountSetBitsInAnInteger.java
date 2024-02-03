@@ -7,6 +7,8 @@ public class CountSetBitsInAnInteger {
 
 
 	}
+	
+//	int arr = new int [26]; for {int i=0; i< givenArray.length(); i++){ arr[givenArray[i]++} ; for (int i : givenArray) if arr[k-i]>1 return true; } return false
 
 	public int setBits(int n) {
 		int count = 0;
