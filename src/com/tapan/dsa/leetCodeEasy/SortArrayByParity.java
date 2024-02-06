@@ -15,19 +15,16 @@ public class SortArrayByParity {
 	public static int[] sortArrayByParity(int[] nums) {
 		int s = 0;
 		int e = nums.length - 1;
-		int idx = 0;
-		for (int i = idx; i <= e; i++) {
-			if (nums[s] == 0) {
-				idx = idx + 1;
-			}
-			if (nums[idx] % 2 != 0 && nums[e] % 2 == 0) {
-				int temp = nums[idx];
-				nums[idx] = nums[e];
+		while (s < e) {
+			if (nums[s] % 2 != 0 && nums[e] % 2 == 0) {
+				int temp = nums[s];
+				nums[s] = nums[e];
 				nums[e] = temp;
 			}
-			s++;
-			e--;
-
+			if (nums[s] % 2 == 0)
+				s++;
+			if (nums[e] % 2 != 0)
+				e--;
 		}
 		return nums;
 
