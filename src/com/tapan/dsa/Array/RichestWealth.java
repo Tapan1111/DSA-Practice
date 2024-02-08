@@ -7,7 +7,7 @@ public class RichestWealth {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter rows:");
 		int row = sc.nextInt();
-		System.out.println("Enter rows:");
+		System.out.println("Enter cols:");
 		int col = sc.nextInt();
 		int max = 0;
 		int[][] bank = new int[row][col];
@@ -31,12 +31,12 @@ public class RichestWealth {
 		}
 
 
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
-				System.out.print(bank[i][j] + " ");
-			}
-			System.out.println();
-		}
+//		for (int i = 0; i < row; i++) {
+//			for (int j = 0; j < col; j++) {
+//				System.out.print(bank[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
 	}
 
 }
