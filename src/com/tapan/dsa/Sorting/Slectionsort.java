@@ -6,11 +6,13 @@ public class Slectionsort {
 	public static void main(String[] args) {
 		Slectionsort selectiionsort = new Slectionsort();
 		int[] arr = { 7, 9, 99, 54, 2, 1 };
-		selectiionsort.sorting(arr);
+		int[] res = selectiionsort.sorting(arr);
+		System.out.println(Arrays.toString(res));
 
 	}
 
-	public static void sorting(int[] arr) {
+	public static int[] sorting(int[] arr) {
+		int[] ans = new int[arr.length];
 		for (int i = 0; i < arr.length; i++) {
 			int mi = i;
 			for (int j = i + 1; j < arr.length; j++) {
@@ -19,8 +21,10 @@ public class Slectionsort {
 				}
 			}
 			swap(arr, i, mi);
+			ans[i] = arr[i];
 		}
 		System.out.println(Arrays.toString(arr));
+		return ans;
 
 	}
 
