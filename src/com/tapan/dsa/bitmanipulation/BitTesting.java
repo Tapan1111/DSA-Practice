@@ -10,8 +10,15 @@ public class BitTesting {
 		int t = a >> 2;
 //		System.out.println(t);
 		int n = 8;
-		System.out.println(isOdd(n));
-		System.out.println(isEven(n));
+		int k = 2;
+		int p = (1 << k);
+		if ((n & p) != 0) {
+			System.out.println("Set");
+		} else {
+			System.out.println("NotSet");
+		}
+//		System.out.println(isOdd(n));
+//		System.out.println(isEven(n));
 
 	}
 
