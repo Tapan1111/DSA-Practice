@@ -2,7 +2,7 @@ package com.tapan.dsa.bitmanipulation;
 
 public class FactorialTrailingZeros {
 	public static void main(String[] args) {
-		int n = 10;
+		int n = 40;
 		System.out.println(solve(n));
 
 	}
