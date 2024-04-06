@@ -2,9 +2,10 @@ package com.tapan.dsa.Sorting;
 
 public class Sorting_QuickSort {
 	public static void main(String[] args) {
-		int[] arr = { 3, 1, 2, 4, 5, 9, 8, 7, 6, 10 };
+		int[] arr = { 3, 78, 5, 23, 67, 11, 33, 9, 2, 8 };
 		printarr(arr);
 		quickSort(arr, 0, arr.length - 1);
+		System.out.println();
 		printarr(arr);
 
 	}
