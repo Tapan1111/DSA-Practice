@@ -1,4 +1,4 @@
-package com.tapan.dsa.hashMap;
+package com.tapan.dsa.Stack;
 
 import java.util.Arrays;
 import java.util.Stack;
