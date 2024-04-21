@@ -66,8 +66,8 @@ public class StacksImplementation {
 //		System.out.println(st.size());
 //		System.out.println(st.isEmpty());
 //		st.print();
-		int[] arr = { 4, 8, 5, 2, 25 };
-		int[] res = nextSmallerElementLeft(arr);
+		int[] arr = { 2, 1, 5, 6, 2, 3 };
+		int[] res = nextSmallerElementRight(arr);
 		System.out.println(Arrays.toString(res));
 
 	}
@@ -77,13 +77,13 @@ public class StacksImplementation {
 		int[] ans = new int[arr.length];
 		for (int i = 0; i < arr.length; i++) {
 			while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
-				ans[stack.pop()] = arr[i];
+				ans[stack.pop()] = i;
 
 			}
 			stack.push(i);
 		}
 		while (!stack.isEmpty()) {
-			ans[stack.pop()] = -1;
+			ans[stack.pop()] = 6;
 		}
 		return ans;
 
