@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class CheckIsogram {
 	public static void main(String[] args) {
-		String data = "machinei";
+		String data = "machine";
 		System.out.println(check(data));
 	}
 
