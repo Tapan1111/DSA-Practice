@@ -40,6 +40,58 @@ public class LL {
 
 	}
 
+	public Node find(int val) {
+		Node temp = head;
+		while(temp != null) {
+			if(temp.data == val) {
+				return temp;
+			}
+			temp = temp.next;
+		}
+		return null;
+		
+	}
+	public int findValue(int index) {
+		Node node = get(index);
+		int val = node.data;
+		return val;
+	}
+
+	public int delete(int index) {
+		if (index == 0) {
+			deleteFirst();
+		}
+		if (index == size - 1) {
+			deleteLast();
+		}
+		Node prev = get(index - 1);
+		int val = prev.next.data;
+		prev.next = prev.next.next;
+		size--;
+		return val;
+	}
+
+	public int deleteLast() {
+
+		if (size <= 1) {
+			deleteFirst();
+		}
+		Node secondLast = get(size - 2);
+		int val = tail.data;
+		tail = secondLast;
+		tail.next = null;
+
+		size--;
+		return val;
+	}
+
+	public Node get(int index) {
+		Node node = head;
+		for (int i = 0; i < index; i++) {
+			node = node.next;
+		}
+		return node;
+	}
 	public int deleteFirst() {
 		int val = head.data;
 		head = head.next;
