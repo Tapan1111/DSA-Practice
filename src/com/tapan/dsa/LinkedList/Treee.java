@@ -2,6 +2,7 @@ package com.tapan.dsa.LinkedList;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Treee {
 
@@ -15,6 +16,75 @@ public class Treee {
 		}
 	}
 
+	public static void levelOrder(Node root) {
+
+		Queue<Node> q = new LinkedList<>();
+		Node node = root;
+		q.add(node);
+		while (!q.isEmpty()) {
+			Node curr = q.poll();
+			System.out.println(curr.data);
+			if (curr.left != null)
+				q.add(curr.left);
+			if (curr.right != null)
+				q.add(curr.right);
+		}
+
+	}
+
+	public static void InOrderUsingStack(Node root) {
+		Stack<Node> st = new Stack<>();
+		Node curr = root;
+		while (curr != null || st.size() > 0) {
+			while (curr != null) {
+				st.push(curr);
+				curr = curr.left;
+			}
+			curr = st.pop();
+			System.out.println(curr.data);
+			curr = curr.right;
+		}
+	}
+
+	public static void InPreUsingStack(Node root) {
+		Stack<Node> st = new Stack<>();
+		Node curr = root;
+		while (curr != null || st.size() > 0) {
+			while (curr != null) {
+				System.out.println(curr.data);
+				st.push(curr);
+				curr = curr.left;
+			}
+			curr = st.pop();
+			curr = curr.right;
+
+		}
+	}
+
+	public static void InPostUsingStack(Node root) {
+		Stack<Node> stack = new Stack<>();
+		while (true) {
+			while (root != null) {
+				stack.push(root);
+				stack.push(root);
+				root = root.left;
+			}
+
+			// Check for empty stack
+			if (stack.empty())
+				return;
+			root = stack.pop();
+
+			if (!stack.empty() && stack.peek() == root)
+				root = root.right;
+
+			else {
+
+				System.out.print(root.data + " ");
+				root = null;
+			}
+		}
+	}
 	public static void printInOrder(Node root) {
 		if (root == null) {
 			return;
@@ -77,7 +147,7 @@ public class Treee {
 		n50.right = n70;
 		n30.right = n90;
 
-		printInOrder(n10);
+		levelOrder(n10);
 
 	}
 
