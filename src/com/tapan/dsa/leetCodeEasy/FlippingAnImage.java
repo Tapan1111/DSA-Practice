@@ -24,7 +24,7 @@ public class FlippingAnImage {
 		for (int i = 0; i < m; i++) {
 			ArrayList<Integer> temperory = new ArrayList<Integer>();
 			for (int j = 0; j < m; j++) {
-				temperory.add(2 - image.get(i).get(n - j - 1));
+				temperory.add(1 - image.get(i).get(n - j - 1));
 			}
 			ans.add(temperory);
 		}

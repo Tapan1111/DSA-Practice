@@ -1,5 +1,6 @@
 package com.tapan.dsa.LinkedList;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -126,6 +127,45 @@ public class Treee {
 				q.add(curr.right);
 		}
 	}
+
+	static class Pair {
+		Node node;
+		int state;
+
+		Pair(Node node, int state) {
+			this.node = node;
+			this.state = state;
+		}
+	}
+
+	static ArrayList<Integer> pre = new ArrayList<Integer>();
+	static ArrayList<Integer> in = new ArrayList<Integer>();
+	static ArrayList<Integer> post = new ArrayList<Integer>();
+
+	public static void iterativeTraversal(Node root) {
+		Stack<Pair> st = new Stack<>();
+		st.add(new Pair(root, 1));
+		while(!st.isEmpty()) {
+			Pair curr = st.peek();
+			if(curr.state == 1) {
+				pre.add(curr.node.data);
+				curr.state++;
+				if (curr.node.left != null) {
+					st.add(new Pair(curr.node.left, 1));
+				}
+			} else if (curr.state == 2) {
+				in.add(curr.node.data);
+				curr.state++;
+				if (curr.node.right != null) {
+					st.add(new Pair(curr.node.right, 1));
+				}
+			} else {
+				post.add(curr.node.data);
+				st.pop();
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		Node n10 = new Node(10);
 		Node n20 = new Node(20);
@@ -147,7 +187,10 @@ public class Treee {
 		n50.right = n70;
 		n30.right = n90;
 
-		levelOrder(n10);
+		iterativeTraversal(n10);
+		System.out.println(pre);
+		System.out.println(in);
+		System.out.println(post);
 
 	}
 
